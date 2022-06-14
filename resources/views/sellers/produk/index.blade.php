@@ -24,28 +24,46 @@
 <div class="section full mb-3">
     <div class="section-title">Semua <span>({{$count}})</span></div>
     <div class="infinite-scroll">
-    <ul class="listview image-listview media mb-2" id="myUL">
-        @foreach($products as $product)
-        <li>
-            <a href="{{ route('sellerproducts.show',$product->id) }}" class="item">
-                <div class="imageWrapper">
-                    <img src="https://res.cloudinary.com/baby-daily-indonesia/image/upload/w_64,ar_1:1,c_fill,g_auto/{{$product->cover}}" alt="image" class="imaged w64">
-                </div>
-                <div class="in">
-                    <div>
-                        {{ $product->nama_produk }}
-                        <div class="text-muted">Rp {{$product->harga}}</div>
+        <ul class="listview image-listview media mb-2" id="myUL">
+            @foreach($products as $product)
+            <li>
+                <a href="{{ route('sellerproducts.show',$product->id) }}" class="item">
+                    <div class="imageWrapper">
+                        <img src="https://res.cloudinary.com/baby-daily-indonesia/image/upload/w_64,ar_1:1,c_fill,g_auto/{{$product->cover}}" alt="image" class="imaged w64">
                     </div>
-                </div>
-            </a>
-        </li>
-        @endforeach
-    </ul>
-    {{$products->links()}}
+                    <div class="in">
+                        <div>
+                            {{ $product->nama_produk }}
+                            <div class="text-muted">Rp {{$product->harga}}</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            @endforeach
+        </ul>
+        {{$products->links()}}
     </div>
-
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/js/jquery.jscroll.min.js"></script>
+
+<script type="text/javascript">
+    $('ul.pagination').hide();
+    $(function() {
+        $('.infinite-scroll').jscroll({
+            autoTrigger: true,
+            loadingHtml: '<img class="center-block" src="/img/load.gif" alt="Loading..." />',
+            padding: 0,
+            nextSelector: '.pagination li.active + li a',
+            contentSelector: 'div.infinite-scroll',
+            callback: function() {
+                $('ul.pagination').remove();
+            }
+        });
+    });
+</script>
 
 <script>
         function myFunction() {
@@ -66,19 +84,5 @@
         }
     </script>
 
-<script type="text/javascript">
-        $('ul.pagination').hide();
-        $(function() {
-            $('.infinite-scroll').jscroll({
-                autoTrigger: true,
-                loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
-                padding: 0,
-                nextSelector: '.pagination li.active + li a',
-                contentSelector: 'div.infinite-scroll',
-                callback: function() {
-                    $('ul.pagination').remove();
-                }
-            });
-        });
-        </script>
+        
 @endsection

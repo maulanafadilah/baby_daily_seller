@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/custom-style.css">
     <!-- Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
     @yield('extention')
     @yield('style')
 
@@ -100,6 +101,10 @@
     <script src="{{ URL::asset('assets/js/base.js') }}"></script>
     <!-- select2 -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    
+    
+
     @stack('javascript-internal')
 
     <script type="text/javascript">

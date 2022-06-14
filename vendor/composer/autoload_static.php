@@ -31,8 +31,8 @@ class ComposerStaticInitd597ab2f271e705b15cfeb1e4c01a836
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
         '746bb4ebbdf3585f3e2e85fffd4a5f43' => __DIR__ . '/..' . '/cloudinary-labs/cloudinary-laravel/src/Support/helpers.php',
+        '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -557,11 +557,15 @@ class ComposerStaticInitd597ab2f271e705b15cfeb1e4c01a836
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Sellers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/DashboardController.php',
+        'App\\Http\\Controllers\\Sellers\\DistrictController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/DistrictController.php',
         'App\\Http\\Controllers\\Sellers\\ImagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/ImagesController.php',
         'App\\Http\\Controllers\\Sellers\\NoteBooksController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/NoteBooksController.php',
         'App\\Http\\Controllers\\Sellers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/ProfileController.php',
+        'App\\Http\\Controllers\\Sellers\\ProvinceController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/ProvinceController.php',
+        'App\\Http\\Controllers\\Sellers\\RegencyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/RegencyController.php',
         'App\\Http\\Controllers\\Sellers\\SellerProductsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/SellerProductsController.php',
         'App\\Http\\Controllers\\Sellers\\SellersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/SellersController.php',
+        'App\\Http\\Controllers\\Sellers\\VillageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Sellers/VillageController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
