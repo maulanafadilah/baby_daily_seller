@@ -9,7 +9,7 @@
                 <strong>{{auth()->user()->nama_lengkap}}</strong>
                 <div class="text-muted">
                     <ion-icon name="star-outline"></ion-icon>
-                    Member Bronze
+                    Seller
                 </div>
             </div>
             <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">

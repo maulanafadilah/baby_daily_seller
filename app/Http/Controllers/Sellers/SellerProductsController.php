@@ -27,7 +27,7 @@ class SellerProductsController extends Controller
         $products = Products::join('sellers', 'sellers.id', '=', 'products.id_penjual')
             ->where('sellers.nomor_telepon', auth()->user()->nomor_telepon)
             ->select('products.id', 'products.cover', 'products.nama_produk', 'products.harga', 'products.stok')
-            ->paginate(8);
+            ->paginate(6);
         $count = Products::join('sellers', 'sellers.id', '=', 'products.id_penjual')
             ->where('sellers.nomor_telepon', auth()->user()->nomor_telepon)
             ->select('products.id', 'products.cover', 'products.nama_produk', 'products.harga', 'products.stok')
@@ -164,7 +164,7 @@ class SellerProductsController extends Controller
      */
     public function show($id)
     {
-        $products = Products::where('id', $id)->first();
+        $products = Products::where('products.id', $id)->join('categories', 'products.id_kategori', '=', 'categories.id')->select('products.nama_produk', 'products.stok', 'products.harga', 'products.id as id', 'products.brand', 'products.deskripsi','categories.nama_kategori')->first();
         $produk = Products::join('productimages', 'productimages.id_produk', '=', 'products.id')
             ->where('products.id', '!=', $id)->get();
         $images = Products::join('productimages', 'productimages.id_produk', '=', 'products.id')
@@ -196,12 +196,13 @@ class SellerProductsController extends Controller
     {
         $products = Products::join('productimages', 'productimages.id_produk', '=', 'products.id')
             ->where('products.id', $id)
-            ->select('products.id', 'products.nama_produk', 'products.harga', 'products.brand', 'products.stok', 'products.deskripsi', 'products.link_buka', 'products.link_tokped', 'products.link_shopee')->get()[0];
+            ->select('products.id', 'products.nama_produk', 'products.harga', 'products.brand', 'products.stok', 'products.deskripsi', 'products.link_buka', 'products.link_tokped', 'products.link_shopee', 'products.id_kategori')->get()[0];
         $categories = DB::table('categories')->get();
         $page_title = 'Edit Produk';
         $page_description = "Edit Produk Sellers Baby Daily";
         $action = __FUNCTION__;
 
+        // return $products;
         // Component
         $header = 'seller_product';
         $roles = auth()->user()->id_peranan;

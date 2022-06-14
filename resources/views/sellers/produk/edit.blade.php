@@ -69,7 +69,7 @@
                     <label class="form-label" for="kategori">Kategori</label>
                     <select class="form-select @error('id_kategori') is-invalid @enderror" aria-label="Default select example" name="id_kategori" id="kategori">
                         @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->nama_kategori }}</option>
+                        <option value="{{ $category->id }}" {{ ( $category->id == $products->id_kategori) ? 'selected' : '' }}>{{ $category->nama_kategori }}</option>
                         @endforeach
                     </select>
                 </div>

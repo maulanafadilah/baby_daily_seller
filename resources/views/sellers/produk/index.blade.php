@@ -23,7 +23,7 @@
 
 <div class="section full mb-3">
     <div class="section-title">Semua <span>({{$count}})</span></div>
-    <div class="infinite-scroll">
+    
         <ul class="listview image-listview media mb-2" id="myUL">
             @foreach($products as $product)
             <li>
@@ -42,28 +42,8 @@
             @endforeach
         </ul>
         {{$products->links()}}
-    </div>
+    
 </div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="/js/jquery.jscroll.min.js"></script>
-
-<script type="text/javascript">
-    $('ul.pagination').hide();
-    $(function() {
-        $('.infinite-scroll').jscroll({
-            autoTrigger: true,
-            loadingHtml: '<img class="center-block" src="/img/load.gif" alt="Loading..." />',
-            padding: 0,
-            nextSelector: '.pagination li.active + li a',
-            contentSelector: 'div.infinite-scroll',
-            callback: function() {
-                $('ul.pagination').remove();
-            }
-        });
-    });
-</script>
 
 <script>
         function myFunction() {

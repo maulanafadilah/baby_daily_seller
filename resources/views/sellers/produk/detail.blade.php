@@ -36,6 +36,32 @@
 
 <div class="section full mt-2 mb-3">
     <div class="section-title">Product Details</div>
+    <ul class="listview simple-listview">
+                <li>
+                    <div class="col text-secondary">
+                        Kategori
+                    </div>
+                    <div class="col">
+                    {{$products->nama_kategori}}
+                    </div>
+                </li>
+                <li>
+                    <div class="col text-secondary">
+                        Brand
+                    </div>
+                    <div class="col">
+                    {{$products->brand}}
+                    </div>
+                </li>
+                <li>
+                    <div class="col text-secondary">
+                        Stok
+                    </div>
+                    <div class="col">
+                    {{$products->stok}}
+                    </div>
+                </li>
+            </ul>
     <div class="wide-block pt-2 pb-2">
         {!! $products->deskripsi !!}
     </div>

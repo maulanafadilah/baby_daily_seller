@@ -11,7 +11,7 @@
             <h4 class="subtitle mt-2">Judul Catatan</h4>
             <div class="form-group basic">
                 <div class="input-wrapper">
-                    <input type="text" class="form-control" id="name1" placeholder="Enter your name" name="judul" value="{{ $notebooks->judul }}">
+                    <input type="text" class="form-control" id="name1" placeholder="Judul Catatan" name="judul" value="{{ $notebooks->judul }}">
                     <i class="clear-input">
                         <ion-icon name="close-circle"></ion-icon>
                     </i>
